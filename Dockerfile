@@ -1,6 +1,7 @@
 FROM java
 MAINTAINER jack
-RUN sed -i '/jessie-updates/d' /etc/apt/sources.list
+RUN deb http://archive.debian.org/debian/ jessie-backports main contrib non-free
+RUN deb-src http://archive.debian.org/debian/ jessie-backports main contrib non-free
 RUN apt-get update
 RUN apt-get install -y wget
 
